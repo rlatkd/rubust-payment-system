@@ -8,7 +8,7 @@ import reactor.core.publisher.Mono
 class TossPaymentExecutor (
     private val tossPaymentWebClient: WebClient,
     private val uri: String = "/v1/payments/confirm"
-    ) {
+) {
 
     fun execute(paymentKey: String, orderId: String, amount: String): Mono<String> {
         return tossPaymentWebClient.post()
